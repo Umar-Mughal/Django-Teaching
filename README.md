@@ -1,5 +1,3 @@
-# Project 1: Project Name Here
+# Project 1: Project My Site
 
-Give project intro here
-
-run: python3 filename.py
+A blog
