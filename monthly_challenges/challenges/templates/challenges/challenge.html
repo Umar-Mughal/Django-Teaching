@@ -7,6 +7,9 @@
 
 <!--content-->
 {% block content %}
+    <!--header-->
+    {% include "challenges/includes/header.html" %}
+
     <h1>{{month_name | title }} challenge</h1>
     {% if text is not None %}
         <h2>{{month_name}}: {{ text }}</h2>

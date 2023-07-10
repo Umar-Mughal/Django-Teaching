@@ -7,6 +7,8 @@
 
 <!--content-->
 {% block content %}
+    <!--header-->
+    {% include "challenges/includes/header.html" %}
     <ul>
         {% for month in months %}
             <li><a href="{% url 'monthly-challenge' month %}">{{ month|title }}</a></li>
