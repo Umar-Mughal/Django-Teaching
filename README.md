@@ -1,5 +1,3 @@
-# Project 1: Project Name Here
+# Project: Book Store
 
-Give project intro here
-
-run: python3 filename.py
+A project to learning django data & models and databases stuff.
