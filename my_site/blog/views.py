@@ -9,4 +9,4 @@ def posts(request):
     return render(request, "blog/all-posts.html")
 
 def post(request, slug):
-    return HttpResponse("Single Post Page!")
+    return render(request, "blog/post-detail.html")
