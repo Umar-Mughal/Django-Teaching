@@ -6,7 +6,7 @@ def starting_page(request):
     return render(request, "blog/index.html")
 
 def posts(request):
-    return HttpResponse("Posts Page!")
+    return render(request, "blog/all-posts.html")
 
 def post(request, slug):
     return HttpResponse("Single Post Page!")
