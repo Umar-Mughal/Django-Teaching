@@ -8,3 +8,10 @@ harry_potter.save()  # Here actual DB query is executed
 
 # --- RETRIEVING ALL --- #
 Book.objects.all()
+
+# --- UPDATING --- #
+harry_potter = Book.objects.all()[0]
+harry_potter.author = "J.K Rowling"
+harry_potter.title = "Harry Potter 1"
+harry_potter.save()
+
