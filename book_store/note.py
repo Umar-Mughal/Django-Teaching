@@ -15,3 +15,7 @@ harry_potter.author = "J.K Rowling"
 harry_potter.title = "Harry Potter 1"
 harry_potter.save()
 
+# --- DELETING --- #
+from book_outlet.models import Book
+harry_potter = Book.objects.all()[0]
+harry_potter.delete()
