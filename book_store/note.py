@@ -11,8 +11,13 @@ harry_potter.save()  # Here actual DB query is executed
 Book.objects.create(title="Harry Potter", rating=2, author="J.K Rowlings", is_bestselling=True)
 
 # ------------------------------------------------------------ #
-# --- RETRIEVING ALL --- #
+# --- RETRIEVING --- #
+
+# -- retrieving all -- #
 Book.objects.all()
+# -- retrieving single -- #
+Book.objects.get(id=4)
+Book.objects.get(title="Harry Potter")
 
 # ------------------------------------------------------------ #
 # --- UPDATING --- #
