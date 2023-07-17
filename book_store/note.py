@@ -21,6 +21,9 @@ Book.objects.get(title="Harry Potter")
 # -- retrieving for a certain criteria: filter() -- #
 Book.objects.filter(rating_lt=3)
 Book.objects.filter(rating__lt=3, title__contains="Harry")
+# -- or condition
+from django.db.models import Q
+Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True))
 
 # ------------------------------------------------------------ #
 # --- UPDATING --- #
