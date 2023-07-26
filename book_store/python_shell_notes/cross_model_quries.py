@@ -16,3 +16,15 @@ jkr
 >>> <Author: Author object (1)>
 jkr.book_set.all()
 <QuerySet [<Book: Harry Potter 1 (Rating:5)>]>
+
+# Getting Author's Data with Custom related_name "books"
+
+from book_outlet.models import Author, Book
+jkr = Author.objects.get(first_name="J.K")
+jkr.books.all() # ALL BOOKS
+>>> <QuerySet [<Book: Harry Potter 1 (Rating:5)>]>
+jkr.books.get(title="Harry Potter 1") # SINGLE BOOK
+>>> <Book: Harry Potter 1 (Rating:5)>
+jkr.books.filter(rating__gt=3) # BOOK WHERE RATING IS GREATER THAN 3
+>>> <QuerySet [<Book: Harry Potter 1 (Rating:5)>]>
+
