@@ -17,21 +17,9 @@ class ReviewView(View):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/thank-you')
-        
-def review(request):
-    if request.method == 'POST':
-        existing_data = Review.objects.get(pk=1)
-        form = ReviewForm(request.POST, instance=existing_data)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/thank-you')
-    else:
-        form = ReviewForm() # New Empty Form
 
-    return render(request, "reviews/review.html", {
-        "form": form
-    })
+class ThankYouView(View):
+    def get(self, request):
+        return render(request, "reviews/thank_you.html")
 
 
-def thank_you(request):
-    return render(request, "reviews/thank_you.html")
