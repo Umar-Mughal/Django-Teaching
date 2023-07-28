@@ -10,8 +10,9 @@ def review(request):
         if form.is_valid():
             print("cleaned data", form.cleaned_data)
             return HttpResponseRedirect('/thank-you')
+    else:
+        form = ReviewForm() # New Empty Form
 
-    form = ReviewForm()
     return render(request, "reviews/review.html", {
         "form": form
     })
