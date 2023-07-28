@@ -11,7 +11,11 @@ from .models import Review
 class ReviewView(FormView):
     form_class = ReviewForm
     template_name = "reviews/review.html"
-    
+    success_url = '/thank-you'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 class ThankYouView(TemplateView):
     template_name = "reviews/thank_you.html"
