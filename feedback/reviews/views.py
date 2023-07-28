@@ -27,4 +27,11 @@ class ThankYouView(TemplateView):
         context['message'] = "This Works!"
         return context
 
+class AllReviewsView(TemplateView):
+    template_name = "reviews/all_reviews.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        reviews = Review.objects.all()
+        context['reviews'] = reviews
+        return context
