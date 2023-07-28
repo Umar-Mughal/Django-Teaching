@@ -31,6 +31,7 @@ class ThankYouView(TemplateView):
 class AllReviewsView(ListView):
     template_name = "reviews/all_reviews.html"
     model = Review
+    context_object_name = 'reviews'
 
 class SingleReviewView(TemplateView):
     template_name = "reviews/single_review.html"
