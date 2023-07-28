@@ -16,7 +16,21 @@
             {{ form.user_name.label_tag }}
             {{ form.user_name }}
             {{ form.user_name.errors }}
-        <button>Send</button>
+            <button>Send</button>
+        </div>
+        <div class="form-control {% if form.review_text.errors %}errors{% endif %} ">
+            {% csrf_token %}
+            {{ form.review_text.label_tag }}
+            {{ form.review_text }}
+            {{ form.review_text.errors }}
+            <button>Send</button>
+        </div>
+        <div class="form-control {% if form.rating.errors %}errors{% endif %} ">
+            {% csrf_token %}
+            {{ form.rating.label_tag }}
+            {{ form.rating }}
+            {{ form.rating.errors }}
+            <button>Send</button>
         </div>
     </form>
 </body>
