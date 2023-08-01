@@ -49,7 +49,7 @@ class SinglePostView(View):
             comment = comment_form.save(commit=False) # commit=False means will not save yet
             comment.post = post # attaching post reference here
             comment.save() # manually calling save now
-            
+
             return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
 
         context = {
@@ -58,24 +58,3 @@ class SinglePostView(View):
             "comment_form": comment_form # if the form is invalid errors will be sent
         }
         return render(request, "blog/post-detail.html", context)
-
-def starting_page(request):
-    latest_posts = Post.objects.all().order_by("-date")[:3] # It will directly just fetch 3 records from DB, not just fetch all and then slice first 3.
-    return render(request, "blog/index.html", {
-        "posts": latest_posts
-    })
-
-
-def posts(request):
-    all_posts = Post.objects.all().order_by("-date")
-    return render(request, "blog/all-posts.html", {
-        "all_posts": all_posts
-    })
-
-
-def post(request, slug):
-    # identified_post = Post.object.get(slug=slug)
-    identified_post = get_object_or_404(Post, slug=slug)
-    return render(request, "blog/post-detail.html", {
-        "post": identified_post
-    })
