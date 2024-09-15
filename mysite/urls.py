@@ -23,3 +23,7 @@ urlpatterns = [
     path('', debug.default_urlconf),  # django default home page
     path('blog/', include('blog.urls', namespace='blog')),
 ]
+
+admin.site.index_title = "The BookStore"
+admin.site.site_header = "The BookStore Admin"
+admin.site.site_title = "Site Title BookStore"
